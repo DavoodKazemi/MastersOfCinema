@@ -1,0 +1,71 @@
+﻿@page
+@model MastersOfCinema.Pages.Movies.CreateModel
+
+@{
+    ViewData["Title"] = "Add a movie";
+}
+
+<h1>Add a movie directed by</h1>
+
+<h4>@Model.GetDirectorName(Model.Movie.DirectorId)</h4>
+
+<hr />
+
+<div>
+    <form class="MovieEdit" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <input type="hidden" asp-for="Movie.DirectorId" class="form-control" />
+            <!--type="hidden"-->
+        </div>
+
+        <div class="form-group MovieEditItem1">
+
+            <label asp-for="Movie.Title" class="control-label"></label>
+            <input asp-for="Movie.Title" class="form-control" />
+            <span asp-validation-for="Movie.Title" class="text-danger"></span>
+
+            <br />
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+            <div class="form-group MovieEditPoster" runat="server">
+                <label asp-for="Movie.MoviePosterName" class="control-label">Movie poster</label>
+                <div MovieEditPoster>
+                    <img id="blah" src="~/uploads/posters/MoviesDefaultImage.jpg" />
+                </div>
+                <br />
+                <input type="file" asp-for="Image" class="form-control" id="imgInp" value="~/uploads/posters/@Model.Movie.MoviePosterName" />
+                <span asp-validation-for="Movie.MoviePosterName" class="text-danger"></span>
+            </div>
+
+
+
+            <label asp-for="Movie.Year" class="control-label"></label>
+            <input asp-for="Movie.Year" class="form-control" />
+            <span asp-validation-for="Movie.Year" class="text-danger"></span>
+
+            <br />
+
+            <label asp-for="Movie.Description" class="control-label"></label>
+            <textarea rows="10" asp-for="Movie.Description" class="form-control" MovieEditDescriptionTextarea"> </textarea>
+            <span asp-validation-for="Movie.Description" class="text-danger"></span>
+
+
+            <br />
+
+
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-danger btn-lg" /> |
+                <a class="btn btn-primary btn-lg" id="MovieEditCancelButton" asp-page="./../Directors/Index">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

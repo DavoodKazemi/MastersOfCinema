@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Masters Of Cinema</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
+</head>
+<body>
+
+    <header>
+        <div class="MyNavbar">
+            <nav>
+                <ul id="MyResponsiveNavbarUl">
+                    <li id="MyResponsiveNavbarLi"><a asp-area="" asp-page="/Index"><img src="~/Images/Logo3.jpg" alt="Logo" class="logo" /></a></li>
+                    <li id="MyResponsiveNavbarLi"><a asp-area="" asp-page="/Directors/Index">Directors</a></li>
+                    <li id="MyResponsiveNavbarLi"><a asp-area="" asp-page="/Directors/Create">Add a director</a></li>
+                    <li id="MyResponsiveNavbarLi"><a asp-area="" asp-page="/Movies/Index">All Movies</a></li>
+                    <li id="MyResponsiveNavbarLi"><a asp-area="" asp-page="/About">About</a></li>
+
+
+
+                    <li id="MyResponsiveNavbarLi">
+                        <form class="wrapper" method="get">
+                            <input type="search" class="input"
+                                   placeholder="Search" name="SearchTerm" value="@ViewData["SearchTerm"]" asp-route-searchTerm="SearchTerm">
+                            <button class="searchbtn" asp-page="/Search"><i class="fas fa-search"></i></button>
+                        </form>
+
+
+
+
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    @*<header>
+            <nav id="navbar">
+                <div class="container headerLogo">
+                    <a id="navbar" asp-area="" asp-page="/Index">Masters Of Cinema</a>
+
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li id="navbar" class="nav-item">
+                                <a id="navbar" class="nav-link" asp-area="" asp-page="/Directors/Index">Directors</a>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a id="navbar" class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form method="get" class="SearchBox">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="search" class="form-control" asp-for="SearchTerm" asp-route-searchTerm="SearchTerm" />
+                                <input type="search" class="form-control" name="SearchTerm" value="@ViewData["SearchTerm"]" asp-route-searchTerm="SearchTerm" />
+
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" asp-page="/Search">
+                                        <i class="glyphicon glyphicon-search bg-light"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>*@
+
+
+    <div class="container">
+        <main role="main" class="pb-3" id="mainBody">
+
+            @RenderBody()
+            @RenderSection("Head", required: false)
+
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" id="myFooter">
+        <div class="container">
+
+            <vc:director-movie-count></vc:director-movie-count>
+
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

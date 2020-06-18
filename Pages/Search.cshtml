@@ -1,0 +1,54 @@
+﻿@page
+@model MastersOfCinema.Pages.SearchModel
+@{
+    ViewData["Title"] = "Search";
+}
+
+<br/>
+<h1>Search</h1>
+
+
+@if (Model.searchTermFound == false)
+{
+    <div>NO RESULTS</div>
+    <p>There were no matches for "@Model.SearchTerm".</p>
+}
+else
+{
+    <div class="SearchCountMessage">Found @Model.Director.Count() DIRECTORS and @Model.Movie.Count() MOVIES for "@Model.SearchTerm".</div>
+}
+<br />
+
+
+<figure>
+    @foreach (var item in Model.Director)
+    {
+    <article class="dirList">
+        <figure>
+            <a class="DirectorsIndexImage" asp-page="./Directors/Details" id="directorsimg" asp-route-id="@item.DirectorId" data-original-title="@item.Name"><img class="brightness DirectorsIndexImage" src="~/uploads/@item.PhotoURL" title="@item.Name" /></a>
+        </figure>
+            <a class="DirectorsIndexDirectorName" asp-page="./Directors/Details" asp-route-id="@item.DirectorId"><figcaption class="DirectorsIndexDirectorName">@item.Name</figcaption></a>
+
+        <a class="DirectorsIndexDirectorNameButtons" asp-page="./Movies/Create" asp-route-DirectorId="@item.DirectorId">Add Movie</a> |
+        <a class="DirectorsIndexDirectorNameButtons" asp-page="./Directors/Edit" asp-route-DirectorId="@item.DirectorId">Edit</a>
+    </article>
+    }
+</figure>
+
+
+<!--Test for search-->
+@foreach (var item in Model.Movie)
+{
+    <article class="dirList">
+        <figure>
+            <a asp-page="./Movies/Details" id="directorsimg" asp-route-id="@item.MovieId" data-original-title="@item.Title"><img class="brightness DirectorsIndexImage" src="~/uploads/posters/@item.MoviePosterName" title="@item.Title" /></a>
+        </figure>
+
+        <a asp-page="./Movies/Details" asp-route-id="@item.MovieId" class="DirectorsIndexDirectorName" id="directorsimg">@item.Title (@item.Year) <a class="DirectorsIndexDirectorNameButtons" asp-page="./Movies/Edit" asp-route-id="@item.MovieId">(Edit movie)</a> </a>
+        
+    </article>
+}
+
+
+<br />
+<br />

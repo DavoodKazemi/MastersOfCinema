@@ -1,0 +1,69 @@
+﻿@page
+@model MastersOfCinema.Pages.Directors.DetailsModel
+
+@{
+    ViewData["Title"] = Model.Director.Name;
+}
+
+
+
+
+
+    <section class="dirDetailsMoviesDirectedByName">
+
+        @if (Model.Message != null)
+        {
+            <div class="alert alert-info">@Model.Message</div>
+        }
+        <header>
+            Films directed by
+        </header>
+        <header id="dirDetailsMoviesDirOnlyName">
+            @Model.Director.Name
+        </header>
+    </section>
+
+
+
+        <dl class="dirInfo">
+            <dd>
+                <img class="DirectorDetailsDirectorImage" src="~/uploads/@Model.Director.PhotoURL" />
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Director.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Director.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Director.Country)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Director.Country)
+            </dd>
+            <dt>
+                Biography
+            </dt>
+            <div>
+                @Html.DisplayFor(model => model.Director.Bio)
+            </div>
+        </dl>
+
+
+        <div id="dirMoviesContainer">
+
+            @foreach (var item in Model.Director.Movies)
+            {
+                <article class="dirMovies">
+                    <figure>
+                        <a class="dirDetailsMovieTitle" asp-page="./../Movies/Details" asp-route-id="@item.MovieId"><img class="dirDetailsMovieThumbnail brightness" src="~/uploads/posters/@item.MoviePosterName" /></a>
+                    </figure>
+
+                    <header>
+                        <span class="dirDetailsMovieTitle">
+                            <a class="dirDetailsMovieTitle" asp-page="./../Movies/Details" asp-route-id="@item.MovieId">@Html.DisplayFor(modelItem => item.Title) (@Html.DisplayFor(modelItem => item.Year))</a>
+                        </span>
+                    </header>
+                </article>
+            }
+        </div>

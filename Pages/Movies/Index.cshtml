@@ -1,0 +1,38 @@
+﻿@page
+@model MastersOfCinema.Pages.Movies.IndexModel
+
+@{
+    ViewData["Title"] = "List of all movies";
+}
+
+<h1 id="ListOfAllMovies">List of all movies</h1>
+<div id="MovieCount">(There are @Model.MovieCount movies here.)</div>
+<section class="MovieDetailsMovieInfo">
+    @foreach (var item in Model.Movie)
+    {
+
+        <dl class="MovieDetailsPoster">
+            <dd>
+                <img class="MovieDetailsPoster" src="~/uploads/posters/@item.MoviePosterName" />
+            </dd>
+        </dl>
+
+        <header class="title-1 prettify context">
+            <ul class="MovieDetailsMovieInfoInline">
+                <li class="MovieDetailsMovieTitle">@Html.DisplayFor(modelItem => item.Title)</li>
+                <li class="MovieDetailsMovieYear">@Html.DisplayFor(modelItem => item.Year)</li>
+                <li>Directed by </li>
+                <li class="MovieDetailsMovieDirector"><a asp-page="./../Directors/Details" asp-route-id="@item.DirectorId">@Model.DirectorList.FirstOrDefault(m => m.DirectorId == @item.DirectorId).Name</a></li>
+                <li><a class="MovieDetailsEditButton" asp-page="./Edit" asp-route-id="@item.MovieId">(Edit movie)</a></li>
+
+            </ul>
+            <ul class="MovieDetailsMovieDescription">
+                <li>@Html.DisplayFor(modelItem => item.Description) <a class="MovieDetailsEditButton" asp-page="./Edit" asp-route-id="@item.MovieId">(Edit)</a></li>
+            </ul>
+        </header>
+        <hr id="AllMoviesListHr">
+
+
+        <br />
+    }
+</section>

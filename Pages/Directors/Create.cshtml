@@ -1,0 +1,61 @@
+﻿@page
+@model MastersOfCinema.Pages.Directors.CreateModel
+
+@{
+    ViewData["Title"] = "Add a new director";
+}
+
+<h1>Add</h1>
+
+<h4>Director</h4>
+<hr />
+
+
+
+<form class="MovieEdit" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input type="hidden" asp-for="Director.DirectorId" />
+
+    <div class="form-group MovieEditItem1">
+
+        <label asp-for="Director.Name" class="control-label"></label>
+        <input asp-for="Director.Name" class="form-control" />
+        <span asp-validation-for="Director.Name" class="text-danger"></span>
+        <br />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <div class="form-group MovieEditPoster" runat="server">
+            <label asp-for="Director.PhotoURL" class="control-label">Photo</label>
+
+            <div MovieEditPoster>
+                <img id="blah" src="~/uploads/DirectorsDefaultImage.jpg" />
+            </div>
+            <br />
+
+            <input type="file" asp-for="Image" class="form-control" id="imgInp" value="~/uploads/DirectorsDefaultImage.jpg" />
+            <span asp-validation-for="Director.PhotoURL" class="text-danger"></span>
+        </div>
+
+        <label asp-for="Director.Country" class="control-label"></label>
+        <input asp-for="Director.Country" class="form-control" />
+        <span asp-validation-for="Director.Country" class="text-danger"></span>
+
+        <br />
+
+        <label asp-for="Director.Bio" class="control-label">Biography</label>
+        <textarea rows="10" asp-for="Director.Bio" class="form-control MovieEditDescriptionTextarea"> </textarea>
+        <span asp-validation-for="Director.Bio" class="text-danger"></span>
+        <br />
+
+        <div class="form-group">
+            <input class="btn btn-danger btn-lg" id="MovieEditSaveButton" type="submit" value="Create" /> |
+            <a class="btn btn-primary btn-lg" id="MovieEditCancelButton" asp-page="./Index">Cancel</a>
+        </div>
+
+    </div>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

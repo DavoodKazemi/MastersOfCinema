@@ -1,0 +1,34 @@
+﻿@page
+@model MastersOfCinema.Pages.Movies.DetailsModel
+
+@{
+    ViewData["Title"] = @Model.Movie.Title + " (" + @Model.Movie.Year + ")";
+}
+
+
+
+    <section class="MovieDetailsMovieInfo">
+        @if (Model.Message != null)
+        {
+            <div class="alert alert-info">@Model.Message</div>
+        }
+        <dl class="MovieDetailsPoster">
+            <dd>
+                <img class="MovieDetailsPoster" src="~/uploads/posters/@Model.Movie.MoviePosterName" />
+            </dd>
+        </dl>
+        <header class="title-1 prettify context">
+            <ul class="MovieDetailsMovieInfoInline">
+                <li class="MovieDetailsMovieTitle">@Model.Movie.Title</li>
+                <li class="MovieDetailsMovieYear">@Model.Movie.Year</li>
+                <li>Directed by </li>
+                <li class="MovieDetailsMovieDirector"><a asp-page="./../Directors/Details" asp-route-id="@Model.Movie.DirectorId">@Model.Director.Name</a></li>
+                <li><a class="MovieDetailsEditButton" asp-page="./Edit" asp-route-id="@Model.Movie.MovieId">(Edit movie)</a></li>
+
+            </ul>
+            <ul class="MovieDetailsMovieDescription">
+                <li>@Model.Movie.Description <a class="MovieDetailsEditButton" asp-page="./Edit" asp-route-id="@Model.Movie.MovieId">(Edit)</a></li>
+            </ul>
+        </header>
+    </section>
+

@@ -1,0 +1,719 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+  color:white;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 0px; /*originally 60*/
+    background-color: #14181c;
+    color: #99AABB;
+}
+/*.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there 
+}*/
+
+
+
+#dirDetailsMoviesDirOnlyName {
+    font-size: 1.69230769rem;
+    color: #fff;
+    font-family: Graphik-Semibold-Web,sans-serif;
+    font-weight: 400;
+}
+
+#navbar {
+    height: 80px;
+    background-color: #202428;
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a {
+    color: #fff;
+}
+
+#myFooter3 {
+    
+    background-color: #2C3440;
+    left: 0;
+    position: fixed;
+    width: 100%;
+}
+
+#myFooter4 {
+    height: 70px;
+    background-color: #2C3440;
+    /*width: 100%;
+    bottom: 0;
+    clear: both;
+    line-height: 60px;
+    margin-top: -70px;*/
+}
+
+/*#footer50 {
+    bottom: 0;
+    color: #707070;
+    height: 2em;
+    left: 0;
+    position: relative;
+    //changed to relative from fixed also works if position is not there font-size: small;
+    width: 100%;
+}*/
+
+
+
+
+    .headerLogo {
+        float: left;
+        margin: 10px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+
+
+#mainBody {
+    min-height: calc(100vh - 130px);
+}
+
+#myFooter {
+    height: 70px;
+    background-color: #2C3440;
+    bottom: 0;
+    margin-top: 0px;
+    clear: both;
+    line-height: 70px;
+    /*width: 100%;
+    line-height: 60px;
+    */
+}
+
+#vc{
+    font-weight:lighter;
+}
+
+/*.SearchBox {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+*/
+
+
+
+/*
+    Test highliting photos on hover
+
+*/
+
+.brightness {
+    background-color: white;
+    display: inline-block;
+}
+
+    .brightness:hover {
+        opacity: .7;
+    }
+/*
+    Test for forcing a div to go below
+
+*/
+.ForceToBelowTest {
+    float: left;
+    clear: left;
+}
+
+
+
+/*Test for Movie details page*/
+
+.MovieDetailsMovieInfo {
+    padding: 50px 0 0 150px;
+}
+
+.MovieDetailsPoster {
+    float: left;
+    width: 220px;
+    height: 330px;
+    object-fit: cover;
+}
+
+
+.MovieDetailsMovieInfoInline {
+    padding: 0px 30px 10px 160px;
+}
+
+.MovieDetailsMovieInfoInline li {
+    margin-left: 30px;
+    display: inline-block;
+}
+
+.MovieDetailsMovieTitle {
+    color: #fff;
+    font-weight: Bold;
+    font-size: x-large;
+}
+
+.MovieDetailsMovieYear {
+    color: #c0cbd7;
+}
+
+
+.MovieDetailsMovieDirector a {
+    font-weight: Bold;
+    text-decoration: none;
+    color: #d8e0e8;
+}
+
+    .MovieDetailsMovieDirector a:hover {
+        text-decoration: none;
+        color: #ffff00;
+    }
+
+.MovieDetailsEditButton{
+    font-weight:100;
+    font-size: initial;
+    font-weight:lighter;
+    text-decoration: none;
+    color: #75797e;
+}
+
+    .MovieDetailsEditButton:hover {
+        text-decoration: none;
+        color: #ffff00;
+    }
+
+.MovieDetailsMovieDescription li {
+    padding-left: 23px;
+    width: 500px;
+    color: #99AABB;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.bounding-box img {
+    /*background-image: url(...);*/
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/*Movie Edit Page*/
+.MovieEditItem1 {
+    float: left;
+    width: 350px;
+    height: 1050px;
+}
+
+.MovieEditPoster {
+    width: 260px;
+    height: 440px;
+    object-fit: cover;
+}
+
+#blah {
+    width: 220px;
+    height: 330px;
+    object-fit: cover;
+}
+
+.MovieEditDescriptionTextarea{
+    height:400px;
+
+}
+
+/*Director details page*/
+.dirInfo {
+    float: right;
+    margin: 10px;
+    width: 300px;
+    top: 0;
+    /*height: 1500px;*/
+}
+
+
+.DirectorDetailsDirectorImage {
+    width: 220px;
+    height: 330px;
+    object-fit: cover;
+}
+
+#dirMoviesContainer {
+    padding-right: 300px;
+}
+
+.dirDetailsMoviesDirectedByName {
+    padding-left: 40px;
+    padding-top: 20px;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+.dirMovies {
+    width: 150px;
+    height: 300px;
+    float: left;
+    margin-left: 25px;
+    margin-bottom: 10px;
+}
+
+.dirDetailsMovieThumbnail {
+    width: 147px;
+    height: 220px;
+    float: left;
+    object-fit: cover;
+}
+
+.dirDetailsMovieTitle {
+    margin: 4px 0 4px 0;
+    width: 150px;
+    font-size: 17px;
+    color: #99AABB;
+    font-weight:500;
+    float: left;
+}
+
+    .dirDetailsMovieTitle:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+
+.DirectorsIndexDirectorName {
+    margin: 0 0 4px 0;
+    color: #99AABB;
+    font-size: large;
+    font-weight: bold;
+}
+
+    
+
+
+
+#dirDetailsForceMoviesListBelow{
+
+}
+
+/*All Movies List page*/
+#ListOfAllMovies {
+    padding: 20px 0 0 170px;
+}
+
+#MovieCount {
+    padding: 0 0 0 170px;
+    font-weight:lighter;
+}
+
+#AllMoviesListHr {
+    border-top: 1px solid white;
+    width: 300px;
+}
+
+/*Responsive
+    
+    
+    Navbar*/
+
+#ResponsiveNavbarUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+/*Create a horizontal list with spacing*/
+#ResponsiveNavbarLi {
+    display: inline-block;
+    float: left;
+    margin-right: 1px;
+}
+
+/*Style for menu links*/
+    #ResponsiveNavbarLi a {
+        display: block;
+        min-width: 100px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #fff;
+        background: #202428;
+        text-decoration: none;
+    }
+/*Hover state for top level links*/
+#ResponsiveNavbarLi:hover a {
+    background: #19c589;
+}
+/*Style for dropdown links*/
+#ResponsiveNavbarLi:hover ul a {
+    background: #f3f3f3;
+    color: #2f3036;
+    height: 40px;
+    line-height: 40px;
+}
+    
+
+
+
+/*My Navbar*/
+.MyNavbar {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #202428;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+#Logo {
+    float: left;
+    padding: 100px 0;
+}
+
+
+
+nav {
+    float:none;
+    padding-right: 0px;
+}
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block; /*Make the list horizontal*/
+        margin-left: 25px;
+        padding-top: 5px;
+    }
+
+    nav a {
+        color: #99AABB;
+        font-weight: Bold;
+        text-decoration: none;
+    }
+
+        nav a:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+
+
+/*Responsive Styles*/
+@media screen and (max-width : 1000px) {
+
+    /*Test*/
+
+    .MovieDetailsPoster {
+        float: left;
+    }
+
+    .MovieDetailsMovieInfo {
+        padding: 150px 0 0 50px;
+    }
+
+    .MovieDetailsMovieInfoInline {
+        padding: 0px 30px 10px 20px; /*left 240*/
+    }
+
+    .MovieDetailsMovieDescription li {
+        padding-left: 25px;
+        width: 300px;
+    }
+    /*Test*/
+
+    .dirDetailsMoviesDirectedByName {
+        width: 500px;
+    }
+
+    /*.dirInfo {
+        float: none;
+    }*/
+    
+
+
+        .Logo {
+        float: left;
+        padding: 30px 0;
+    }
+
+
+    /*Make dropdown links appear inline*/
+
+    #MyResponsiveNavbarUl {
+        position: static;
+    }
+    /*Create vertical spacing*/
+    #MyResponsiveNavbarLi {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    #MyResponsiveNavbarLi, #MyResponsiveNavbarLi a {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width : 760px) {
+
+    /*Test*/
+
+    .MovieDetailsPoster {
+        float: none;
+        margin: 0 0 0 60px;
+    }
+
+    .MovieDetailsMovieInfo {
+        padding: 150px 0 0 50px;
+    }
+
+    .MovieDetailsMovieInfoInline {
+        padding: 30px 30px 20px 60px; /*left 240*/
+    }
+
+    .MovieDetailsMovieDescription li {
+        padding-left: 50px;
+        width: 350px;
+    }
+    /*Test*/
+
+    .dirDetailsMoviesDirectedByName {
+        width: 300px;
+    }
+
+
+    /*Make dropdown links appear inline*/
+    #ResponsiveNavbarUl {
+        position: static;
+    }
+    /*Create vertical spacing*/
+    #ResponsiveNavbarLi {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    #MyResponsiveNavbarLi, #MyResponsiveNavbarLi a {
+        width: 100%;
+    }
+
+}
+
+/*Search Box*/
+
+
+
+
+.wrapper {
+
+    max-width: 200px;
+    width: 100%;
+    padding: 1px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+    .wrapper .input {
+        width: 85%;
+        padding: 5px 8px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+.searchbtn {
+    background: #ffec00;
+    width: 14%;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+    .searchbtn .fas {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+    }
+
+
+.SearchCountMessage{
+    font-weight: 700;
+    font-size: 17px;
+}
+/*Directors List*/
+.dirList {
+    width: 200px;
+    height: 410px;
+    float: left;
+    margin-left: 50px;
+    margin-bottom: 18px;
+}
+
+.DirectorsIndexImage {
+    margin: 0 0 7px 0;
+    float: left;
+    width: 220px;
+    height: 330px;
+    object-fit: cover;
+}
+
+.DirectorsIndexDirectorName {
+    margin: 0 0 4px 0;
+    color: #99AABB;
+    font-size: large;
+    font-weight: bold;
+}
+
+    .DirectorsIndexDirectorName:hover {
+        text-decoration:none;
+        color: #fff;
+    }
+
+.DirectorsIndexDirectorNameButtons {
+    font-weight: 100;
+    font-size: initial;
+    font-weight: lighter;
+    text-decoration: none;
+    color: #75797e;
+}
+
+    .DirectorsIndexDirectorNameButtons:hover {
+        text-decoration: none;
+        color: #ffff00;
+    }
+
+.DirectorsIndexAddDirector {
+    color: #7e7d74;
+    font-size: large;
+    font-weight: lighter;
+}
+    .DirectorsIndexAddDirector:hover {
+        text-decoration: none;
+        color: #ffff00;
+    }
+
+
+/*fixeddirInfo
+
+#fixeddirInfo50 {
+    right: 0px;
+    top: 100px;
+    margin-left: 300px;
+    
+    position: fixed;
+
+}
+
+#fixeddirInfo50 {
+    background-color: gray;
+    width: 100px;
+    height: 500px;
+    position: fixed;
+    bottom: 500px;
+    left: 0;
+    right: 0;
+}
+
+
+.userInfo{
+    width:150px;
+}
+
+
+
+.footer {
+    height: 100px;
+}*/
+
+
+.AboutPageText{
+    width: 700px;
+}
+
+.AboutPageWhole{
+    width: 90%;
+}
+
+.IndexInHonour {
+    color: #2c333b;
+}
+
+
+.AboutPageImage {
+    /* Ensure that the relative URL used is from your CSS file to the target image! */
+    background: url(Background.jpg);
+    background-size: cover;
+    height: auto;
+    width: 90%;
+}

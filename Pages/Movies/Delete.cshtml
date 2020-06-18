@@ -1,0 +1,40 @@
+﻿@page
+@model MastersOfCinema.Pages.Movies.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete movie";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <section class="MovieDetailsMovieInfo">
+        <dl class="MovieDetailsPoster">
+            <dd>
+                <img class="MovieDetailsPoster" src="~/uploads/posters/@Model.Movie.MoviePosterName" />
+            </dd>
+        </dl>
+        <header class="title-1 prettify context">
+            <ul class="MovieDetailsMovieInfoInline">
+                <li class="MovieDetailsMovieTitle">@Model.Movie.Title</li>
+                <li class="MovieDetailsMovieYear">@Model.Movie.Year</li>
+                <li>Directed by </li>
+                <li class="MovieDetailsMovieDirector"><a asp-page="./../Directors/Details" asp-route-id="@Model.Movie.DirectorId">@Model.Director.Name</a></li>
+                <li><a class="MovieDetailsEditButton" asp-page="./Edit" asp-route-id="@Model.Movie.MovieId">(Edit movie)</a></li>
+
+            </ul>
+            <ul class="MovieDetailsMovieDescription">
+                <li>@Model.Movie.Description <a class="MovieDetailsEditButton" asp-page="./Edit" asp-route-id="@Model.Movie.MovieId">(Edit)</a></li>
+            </ul>
+        </header>
+        <form method="post">
+            <input type="hidden" asp-for="Movie.MovieId" />
+            <input class="btn btn-danger btn-lg" id="MovieEditSaveButton" type="submit" value="Delete" /> |
+            <a class="btn btn-primary btn-lg" id="MovieEditCancelButton" asp-page="./Details" asp-route-id="@Model.Movie.MovieId">Cancel</a>
+
+        </form>
+    </section>
+    
+    
+</div>
